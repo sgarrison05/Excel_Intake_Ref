@@ -1,4 +1,6 @@
-﻿Public Class frmMain
+﻿Imports Microsoft.Office.Interop
+
+Public Class frmMain
 
     Public Sub ClearLables()
 
@@ -24,6 +26,9 @@
     End Sub
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        'Dim wb = EXL.Application.ActiveWorkbook
+        'Dim ws = EXL.Application.ActiveSheet
 
         'add Type of Referral
         Me.cboxTypeRef.Items.Add("Yes")
@@ -70,20 +75,95 @@
         Me.cboxRANA.Items.Add("No")
 
 
+
+
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
 
-
+        'close application
         Me.Close()
 
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
+    Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
+
+        Me.OpenFileDialog1.FileName = Nothing
+
+        If Me.OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+
+            Me.txbFileName.Text = Me.OpenFileDialog1.FileName
+
+        End If
+
+
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
 
         Call ClearLables()
 
     End Sub
+
+    Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+
+        'open workbook and make is visible
+        Dim MyExcel As New Excel.Application
+        Dim wb As Excel.Workbook = MyExcel.Workbooks.Open(Me.txbFileName.Text, False, False)
+        Dim ws As Excel.Worksheet = wb.Sheets("sheet1")
+        MyExcel.Visible = True
+
+        'write in cell
+        ws.Cells(1, 1).Value = "Test 3"
+
+
+        'This will automatically overwrite and save without interaction
+        'wb.Save()
+        'wb.Close()
+
+        'close workbook
+        MyExcel.Quit()
+
+        'Release objects so the application closes down and behaves correctly
+        ReleaseObject(ws)
+        ReleaseObject(wb)
+        ReleaseObject(MyExcel)
+
+
+    End Sub
+
+    Private Sub ReleaseObject(ByVal obj As Object)
+
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+            GC.WaitForPendingFinalizers()
+        End Try
+
+    End Sub
+
+
+    Private Function GetInfo() As Boolean
+
+        Dim completed = False
+
+        'open workbook
+        Dim MyExcel As New Excel.Application
+        MyExcel.Workbooks.Open(Me.txbFileName.Text)
+
+        'extract
+
+
+
+        'close workbook
+        MyExcel.Workbooks.Close()
+        MyExcel = Nothing
+        Return completed
+    End Function
 End Class

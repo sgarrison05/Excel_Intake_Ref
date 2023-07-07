@@ -22,9 +22,9 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnBrowse = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.btnSubmit = New System.Windows.Forms.Button()
         Me.txtChildName = New System.Windows.Forms.TextBox()
         Me.lblChildName = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -60,40 +60,42 @@ Partial Class frmMain
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txbFileName = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnBrowse
         '
-        Me.Button1.Location = New System.Drawing.Point(27, 429)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(114, 46)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Browse"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnBrowse.Location = New System.Drawing.Point(27, 429)
+        Me.btnBrowse.Name = "btnBrowse"
+        Me.btnBrowse.Size = New System.Drawing.Size(114, 46)
+        Me.btnBrowse.TabIndex = 13
+        Me.btnBrowse.Text = "Browse"
+        Me.btnBrowse.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnClear
         '
-        Me.Button2.Location = New System.Drawing.Point(217, 429)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(114, 46)
-        Me.Button2.TabIndex = 14
-        Me.Button2.Text = "Clear"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnClear.Location = New System.Drawing.Point(217, 429)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(114, 46)
+        Me.btnClear.TabIndex = 14
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnSubmit
         '
-        Me.Button3.Location = New System.Drawing.Point(414, 429)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(114, 46)
-        Me.Button3.TabIndex = 15
-        Me.Button3.Text = "Submit"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnSubmit.Location = New System.Drawing.Point(414, 429)
+        Me.btnSubmit.Name = "btnSubmit"
+        Me.btnSubmit.Size = New System.Drawing.Size(114, 46)
+        Me.btnSubmit.TabIndex = 15
+        Me.btnSubmit.Text = "Submit"
+        Me.btnSubmit.UseVisualStyleBackColor = True
         '
         'txtChildName
         '
         Me.txtChildName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtChildName.Location = New System.Drawing.Point(27, 52)
+        Me.txtChildName.Location = New System.Drawing.Point(27, 65)
         Me.txtChildName.Name = "txtChildName"
         Me.txtChildName.Size = New System.Drawing.Size(266, 26)
         Me.txtChildName.TabIndex = 0
@@ -101,7 +103,7 @@ Partial Class frmMain
         'lblChildName
         '
         Me.lblChildName.AutoSize = True
-        Me.lblChildName.Location = New System.Drawing.Point(24, 36)
+        Me.lblChildName.Location = New System.Drawing.Point(24, 49)
         Me.lblChildName.Name = "lblChildName"
         Me.lblChildName.Size = New System.Drawing.Size(64, 13)
         Me.lblChildName.TabIndex = 4
@@ -227,7 +229,7 @@ Partial Class frmMain
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(650, 36)
+        Me.Label14.Location = New System.Drawing.Point(650, 49)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(34, 13)
         Me.Label14.TabIndex = 18
@@ -236,7 +238,7 @@ Partial Class frmMain
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(350, 36)
+        Me.Label15.Location = New System.Drawing.Point(350, 49)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(47, 13)
         Me.Label15.TabIndex = 19
@@ -261,7 +263,7 @@ Partial Class frmMain
         'txtOffense
         '
         Me.txtOffense.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtOffense.Location = New System.Drawing.Point(353, 52)
+        Me.txtOffense.Location = New System.Drawing.Point(353, 65)
         Me.txtOffense.Name = "txtOffense"
         Me.txtOffense.Size = New System.Drawing.Size(266, 26)
         Me.txtOffense.TabIndex = 1
@@ -280,7 +282,7 @@ Partial Class frmMain
         '
         Me.cboxTypeRef.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxTypeRef.FormattingEnabled = True
-        Me.cboxTypeRef.Location = New System.Drawing.Point(653, 52)
+        Me.cboxTypeRef.Location = New System.Drawing.Point(653, 65)
         Me.cboxTypeRef.Name = "cboxTypeRef"
         Me.cboxTypeRef.Size = New System.Drawing.Size(66, 28)
         Me.cboxTypeRef.TabIndex = 2
@@ -407,11 +409,30 @@ Partial Class frmMain
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(25, 25)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(26, 13)
+        Me.Label16.TabIndex = 22
+        Me.Label16.Text = "File:"
+        '
+        'txbFileName
+        '
+        Me.txbFileName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txbFileName.Location = New System.Drawing.Point(57, 12)
+        Me.txbFileName.Name = "txbFileName"
+        Me.txbFileName.Size = New System.Drawing.Size(662, 26)
+        Me.txbFileName.TabIndex = 21
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(751, 500)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.txbFileName)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.mtxtReSubDate)
@@ -438,9 +459,9 @@ Partial Class frmMain
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblChildName)
         Me.Controls.Add(Me.txtChildName)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnSubmit)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.btnBrowse)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmMain"
@@ -452,9 +473,9 @@ Partial Class frmMain
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents btnBrowse As System.Windows.Forms.Button
+    Friend WithEvents btnClear As System.Windows.Forms.Button
+    Friend WithEvents btnSubmit As System.Windows.Forms.Button
     Friend WithEvents txtChildName As System.Windows.Forms.TextBox
     Friend WithEvents lblChildName As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -490,5 +511,6 @@ Partial Class frmMain
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents btnClose As System.Windows.Forms.Button
-
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txbFileName As TextBox
 End Class
