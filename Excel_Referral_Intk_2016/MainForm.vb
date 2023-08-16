@@ -27,9 +27,6 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        'Dim wb = EXL.Application.ActiveWorkbook
-        'Dim ws = EXL.Application.ActiveSheet
-
         'add Type of Referral
         Me.cboxTypeRef.Items.Add("Yes")
         Me.cboxTypeRef.Items.Add("No")
@@ -74,16 +71,12 @@ Public Class frmMain
         Me.cboxRANA.Items.Add("Yes")
         Me.cboxRANA.Items.Add("No")
 
-
-
-
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
 
         'close application
         Me.Close()
-
 
     End Sub
 
@@ -117,7 +110,6 @@ Public Class frmMain
         'write in cell
         ws.Cells(1, 1).Value = "Test 3"
 
-
         'This will automatically overwrite and save without interaction
         wb.Save()
 
@@ -145,6 +137,5 @@ Public Class frmMain
         End Try
 
     End Sub
-
 
 End Class
