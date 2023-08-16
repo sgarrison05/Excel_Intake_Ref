@@ -1,4 +1,10 @@
-﻿Imports Microsoft.Office.Interop
+﻿' Project: Intake Referral Submission Form
+' Arthor: Shon Garrison
+' Purpose: To streamline submission of intake into an independent form
+' Created: 2016
+' Updated: August 2023
+
+Imports Microsoft.Office.Interop
 
 Public Class frmMain
 
