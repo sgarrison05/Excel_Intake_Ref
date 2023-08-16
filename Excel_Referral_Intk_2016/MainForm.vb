@@ -83,7 +83,6 @@ Public Class frmMain
         Dim ws As Excel.Worksheet = wb.Sheets("sheet1")
         MyExcel.Visible = False
 
-
         'Test for last row
         Dim lastRow As Long
 
@@ -99,7 +98,6 @@ Public Class frmMain
         ws.Cells(lastRow, 7).Value = dteDateSub.Text
         ws.Cells(lastRow, 9).Value = dteLastStatus.Text
         ws.Cells(lastRow, 12).Value = txbNotes.Text
-
 
         'This will automatically overwrite and save without interaction
         wb.Save()
