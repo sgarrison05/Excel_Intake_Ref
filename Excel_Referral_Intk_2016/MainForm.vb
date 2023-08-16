@@ -80,13 +80,14 @@ Public Class frmMain
         'open workbook and make is visible
         Dim MyExcel As New Excel.Application
         Dim wb As Excel.Workbook = MyExcel.Workbooks.Open(Me.txbFileName.Text, False, False)
-        Dim ws As Excel.Worksheet = wb.Sheets("sheet1")
+        'Dim ws As Excel.Worksheet = wb.Sheets("sheet1")
+        Dim ws As Excel.Worksheet = wb.Sheets("Intake Status")
         MyExcel.Visible = False
 
         'Test for last row
         Dim lastRow As Long
 
-        lastRow = ws.Range("A40").End(Excel.XlDirection.xlUp).Row + 1
+        lastRow = ws.Range("A36").End(Excel.XlDirection.xlUp).Row + 1
 
         ''write in cell
         ws.Cells(lastRow, 1).Value = txbChildName.Text
