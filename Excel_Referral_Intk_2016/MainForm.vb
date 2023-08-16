@@ -5,71 +5,47 @@ Public Class frmMain
     Public Sub ClearLables()
 
         'Cleans form
-        Me.txtChildName.Text = ""
-        Me.txtIncidentNo.Text = ""
-        Me.txtOffense.Text = ""
-        Me.txtSupervision.Text = ""
-        Me.txtNotes.Text = ""
-        Me.cboxTypeRef.ResetText()
-        Me.cboxRefAgency.ResetText()
-        Me.cboxSubmit.ResetText()
-        Me.cboxAccepted.ResetText()
-        Me.cboxTempRej.ResetText()
-        Me.cboxRefused.ResetText()
-        Me.cboxSupCaution.ResetText()
-        Me.cboxResub.ResetText()
-        Me.cboxRANA.ResetText()
-        Me.mtxtDateSub.Text = ""
-        Me.mtxtReSubDate.Text = ""
+        Me.txbChildName.Text = ""
+        Me.cmbRefAgency.ResetText()
+        Me.txbOffense.Text = ""
+        Me.txbIncidentNo.Text = ""
+        Me.cmbStatus.ResetText()
+        Me.cmbIntakeComp.ResetText()
+        Me.dteDateSub.Text = ""
+        Me.dteLastStatus.Text = ""
+        Me.txbNotes.Text = ""
 
+        Me.txbChildName.Focus()
 
     End Sub
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        'add Type of Referral
-        Me.cboxTypeRef.Items.Add("Yes")
-        Me.cboxTypeRef.Items.Add("No")
-
         'Add LE Agencies
-        Me.cboxRefAgency.Items.Add("OPD")
-        Me.cboxRefAgency.Items.Add("WOPD")
-        Me.cboxRefAgency.Items.Add("OCSO")
-        Me.cboxRefAgency.Items.Add("PHPD")
-        Me.cboxRefAgency.Items.Add("DPS")
-        Me.cboxRefAgency.Items.Add("BCPD")
-        Me.cboxRefAgency.Items.Add("BCISDPD")
-        Me.cboxRefAgency.Items.Add("VPD")
-        Me.cboxRefAgency.Items.Add("VISDPD")
-        Me.cboxRefAgency.Items.Add("RCMARSHAL")
+        Me.cmbRefAgency.Items.Add("OPD")
+        Me.cmbRefAgency.Items.Add("WOPD")
+        Me.cmbRefAgency.Items.Add("OCSO")
+        Me.cmbRefAgency.Items.Add("PHPD")
+        Me.cmbRefAgency.Items.Add("DPS")
+        Me.cmbRefAgency.Items.Add("BCPD")
+        Me.cmbRefAgency.Items.Add("BCISDPD")
+        Me.cmbRefAgency.Items.Add("VPD")
+        Me.cmbRefAgency.Items.Add("VISDPD")
+        Me.cmbRefAgency.Items.Add("RCMARSHAL")
 
-        'Add Submitted?
-        Me.cboxSubmit.Items.Add("Yes")
-        Me.cboxSubmit.Items.Add("No")
+        'Add Status?
+        Me.cmbStatus.Items.Add("Pending")
+        Me.cmbStatus.Items.Add("Under ADA Review")
+        Me.cmbStatus.Items.Add("Temp Reject")
+        Me.cmbStatus.Items.Add("Offer DP")
+        Me.cmbStatus.Items.Add("Refused")
 
-        'Add Accepted?
-        Me.cboxAccepted.Items.Add("Yes")
-        Me.cboxAccepted.Items.Add("No")
-
-        'Add Temp Rejected?
-        Me.cboxTempRej.Items.Add("Yes")
-        Me.cboxTempRej.Items.Add("No")
-
-        'Add Refused?
-        Me.cboxRefused.Items.Add("Yes")
-        Me.cboxRefused.Items.Add("No")
-
-        'Add Supervisory Cautioned?
-        Me.cboxSupCaution.Items.Add("Yes")
-        Me.cboxSupCaution.Items.Add("No")
-
-        'Add Resub?
-        Me.cboxResub.Items.Add("Yes")
-        Me.cboxResub.Items.Add("No")
-
-        'Add RANA
-        Me.cboxRANA.Items.Add("Yes")
-        Me.cboxRANA.Items.Add("No")
+        'Add Intake Completed?
+        Me.cmbIntakeComp.Items.Add("Yes")
+        Me.cmbIntakeComp.Items.Add("Set")
+        Me.cmbIntakeComp.Items.Add("Needs Setting")
+        Me.cmbIntakeComp.Items.Add("Needs Resetting")
+        Me.cmbIntakeComp.Items.Add("Unable to Locate")
 
     End Sub
 
@@ -108,7 +84,15 @@ Public Class frmMain
         MyExcel.Visible = True
 
         'write in cell
-        ws.Cells(1, 1).Value = "Test 3"
+        ws.Cells(6, 1).Value = txbChildName.Text
+        ws.Cells(6, 2).Value = cmbRefAgency.Text
+        ws.Cells(6, 3).Value = txbOffense.Text
+        ws.Cells(6, 4).Value = txbIncidentNo.Text
+        ws.Cells(6, 5).Value = cmbStatus.Text
+        ws.Cells(6, 6).Value = cmbIntakeComp.Text
+        ws.Cells(6, 7).Value = dteDateSub.Text
+        ws.Cells(6, 9).Value = dteLastStatus.Text
+        ws.Cells(6, 12).Value = txbNotes.Text
 
         'This will automatically overwrite and save without interaction
         wb.Save()
