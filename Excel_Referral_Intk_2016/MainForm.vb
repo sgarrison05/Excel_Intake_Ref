@@ -98,7 +98,6 @@ Public Class frmMain
 
         End If
 
-
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -120,8 +119,7 @@ Public Class frmMain
 
 
         'This will automatically overwrite and save without interaction
-        'wb.Save()
-        'wb.Close()
+        wb.Save()
 
         'close workbook
         MyExcel.Quit()
@@ -149,21 +147,4 @@ Public Class frmMain
     End Sub
 
 
-    Private Function GetInfo() As Boolean
-
-        Dim completed = False
-
-        'open workbook
-        Dim MyExcel As New Excel.Application
-        MyExcel.Workbooks.Open(Me.txbFileName.Text)
-
-        'extract
-
-
-
-        'close workbook
-        MyExcel.Workbooks.Close()
-        MyExcel = Nothing
-        Return completed
-    End Function
 End Class
