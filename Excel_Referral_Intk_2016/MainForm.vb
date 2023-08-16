@@ -81,18 +81,25 @@ Public Class frmMain
         Dim MyExcel As New Excel.Application
         Dim wb As Excel.Workbook = MyExcel.Workbooks.Open(Me.txbFileName.Text, False, False)
         Dim ws As Excel.Worksheet = wb.Sheets("sheet1")
-        MyExcel.Visible = True
+        MyExcel.Visible = False
 
-        'write in cell
-        ws.Cells(6, 1).Value = txbChildName.Text
-        ws.Cells(6, 2).Value = cmbRefAgency.Text
-        ws.Cells(6, 3).Value = txbOffense.Text
-        ws.Cells(6, 4).Value = txbIncidentNo.Text
-        ws.Cells(6, 5).Value = cmbStatus.Text
-        ws.Cells(6, 6).Value = cmbIntakeComp.Text
-        ws.Cells(6, 7).Value = dteDateSub.Text
-        ws.Cells(6, 9).Value = dteLastStatus.Text
-        ws.Cells(6, 12).Value = txbNotes.Text
+
+        'Test for last row
+        Dim lastRow As Long
+
+        lastRow = ws.Range("A40").End(Excel.XlDirection.xlUp).Row + 1
+
+        ''write in cell
+        ws.Cells(lastRow, 1).Value = txbChildName.Text
+        ws.Cells(lastRow, 2).Value = cmbRefAgency.Text
+        ws.Cells(lastRow, 3).Value = txbOffense.Text
+        ws.Cells(lastRow, 4).Value = txbIncidentNo.Text
+        ws.Cells(lastRow, 5).Value = cmbStatus.Text
+        ws.Cells(lastRow, 6).Value = cmbIntakeComp.Text
+        ws.Cells(lastRow, 7).Value = dteDateSub.Text
+        ws.Cells(lastRow, 9).Value = dteLastStatus.Text
+        ws.Cells(lastRow, 12).Value = txbNotes.Text
+
 
         'This will automatically overwrite and save without interaction
         wb.Save()
