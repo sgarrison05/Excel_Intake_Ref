@@ -2,23 +2,6 @@
 
 Public Class frmMain
 
-    Public Sub ClearLables()
-
-        'Cleans form
-        Me.txbChildName.Text = ""
-        Me.cmbRefAgency.ResetText()
-        Me.txbOffense.Text = ""
-        Me.txbIncidentNo.Text = ""
-        Me.cmbStatus.ResetText()
-        Me.cmbIntakeComp.ResetText()
-        Me.dteDateSub.Text = ""
-        Me.dteLastStatus.Text = ""
-        Me.txbNotes.Text = ""
-
-        Me.txbChildName.Focus()
-
-    End Sub
-
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         'Add LE Agencies
@@ -49,13 +32,29 @@ Public Class frmMain
 
     End Sub
 
+    Public Sub ClearLables()
+
+        'Cleans form
+        Me.txbChildName.Text = ""
+        Me.cmbRefAgency.ResetText()
+        Me.txbOffense.Text = ""
+        Me.txbIncidentNo.Text = ""
+        Me.cmbStatus.ResetText()
+        Me.cmbIntakeComp.ResetText()
+        Me.dteDateSub.Text = ""
+        Me.dteLastStatus.Text = ""
+        Me.txbNotes.Text = ""
+
+        Me.txbChildName.Focus()
+
+    End Sub
+
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
 
         'close application
         Me.Close()
 
     End Sub
-
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
 
