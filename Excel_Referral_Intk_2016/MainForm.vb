@@ -2,7 +2,7 @@
 ' Arthor: Shon Garrison
 ' Purpose: To streamline submission of intake into an independent form
 ' Created: 2016
-' Updated: August 2023
+' Updated: November 2024
 
 Imports Microsoft.Office.Interop
 
@@ -11,10 +11,11 @@ Public Class frmMain
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         'Add LE Agencies
-        Me.cmbRefAgency.Items.Add("OPD")
-        Me.cmbRefAgency.Items.Add("WOPD")
         Me.cmbRefAgency.Items.Add("OCSO")
-        Me.cmbRefAgency.Items.Add("PHPD")
+        Me.cmbRefAgency.Items.Add("OPD")
+        Me.cmbRefAgency.Items.Add("LCMCCISDPD")
+        Me.cmbRefAgency.Items.Add("WOPD")
+        Me.cmbRefAgency.Items.Add("WOCCISDPD")
         Me.cmbRefAgency.Items.Add("DPS")
         Me.cmbRefAgency.Items.Add("BCPD")
         Me.cmbRefAgency.Items.Add("BCISDPD")
@@ -33,6 +34,7 @@ Public Class frmMain
         Me.cmbIntakeComp.Items.Add("Yes")
         Me.cmbIntakeComp.Items.Add("Set")
         Me.cmbIntakeComp.Items.Add("Needs Setting")
+        Me.cmbIntakeComp.Items.Add("Partial")
         Me.cmbIntakeComp.Items.Add("Needs Resetting")
         Me.cmbIntakeComp.Items.Add("Unable to Locate")
 
