@@ -47,20 +47,24 @@ Partial Class frmMain
         Me.cmbIntakeComp = New System.Windows.Forms.ComboBox()
         Me.dteLastStatus = New System.Windows.Forms.MaskedTextBox()
         Me.lblDateStatus = New System.Windows.Forms.Label()
+        Me.btnOExcel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnBrowse
         '
-        Me.btnBrowse.Location = New System.Drawing.Point(44, 347)
+        Me.btnBrowse.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBrowse.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBrowse.Location = New System.Drawing.Point(23, 53)
         Me.btnBrowse.Name = "btnBrowse"
-        Me.btnBrowse.Size = New System.Drawing.Size(114, 46)
+        Me.btnBrowse.Size = New System.Drawing.Size(114, 23)
         Me.btnBrowse.TabIndex = 9
         Me.btnBrowse.Text = "Browse"
-        Me.btnBrowse.UseVisualStyleBackColor = True
+        Me.btnBrowse.UseVisualStyleBackColor = False
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(234, 347)
+        Me.btnClear.Location = New System.Drawing.Point(28, 425)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(114, 46)
         Me.btnClear.TabIndex = 10
@@ -69,7 +73,7 @@ Partial Class frmMain
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(431, 347)
+        Me.btnSubmit.Location = New System.Drawing.Point(179, 425)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(114, 46)
         Me.btnSubmit.TabIndex = 11
@@ -79,7 +83,7 @@ Partial Class frmMain
         'txbChildName
         '
         Me.txbChildName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txbChildName.Location = New System.Drawing.Point(27, 90)
+        Me.txbChildName.Location = New System.Drawing.Point(27, 122)
         Me.txbChildName.Name = "txbChildName"
         Me.txbChildName.Size = New System.Drawing.Size(266, 26)
         Me.txbChildName.TabIndex = 0
@@ -87,7 +91,7 @@ Partial Class frmMain
         'lblChildName
         '
         Me.lblChildName.AutoSize = True
-        Me.lblChildName.Location = New System.Drawing.Point(24, 74)
+        Me.lblChildName.Location = New System.Drawing.Point(24, 106)
         Me.lblChildName.Name = "lblChildName"
         Me.lblChildName.Size = New System.Drawing.Size(64, 13)
         Me.lblChildName.TabIndex = 4
@@ -96,7 +100,7 @@ Partial Class frmMain
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(318, 74)
+        Me.Label1.Location = New System.Drawing.Point(318, 106)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 13)
         Me.Label1.TabIndex = 5
@@ -105,7 +109,7 @@ Partial Class frmMain
         'lblDateSub
         '
         Me.lblDateSub.AutoSize = True
-        Me.lblDateSub.Location = New System.Drawing.Point(24, 191)
+        Me.lblDateSub.Location = New System.Drawing.Point(24, 239)
         Me.lblDateSub.Name = "lblDateSub"
         Me.lblDateSub.Size = New System.Drawing.Size(83, 13)
         Me.lblDateSub.TabIndex = 6
@@ -114,7 +118,7 @@ Partial Class frmMain
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
-        Me.lblStatus.Location = New System.Drawing.Point(190, 131)
+        Me.lblStatus.Location = New System.Drawing.Point(190, 171)
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(40, 13)
         Me.lblStatus.TabIndex = 4
@@ -123,7 +127,7 @@ Partial Class frmMain
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(25, 250)
+        Me.Label10.Location = New System.Drawing.Point(25, 305)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(38, 13)
         Me.Label10.TabIndex = 14
@@ -132,7 +136,7 @@ Partial Class frmMain
         'lblIntakeComp
         '
         Me.lblIntakeComp.AutoSize = True
-        Me.lblIntakeComp.Location = New System.Drawing.Point(409, 131)
+        Me.lblIntakeComp.Location = New System.Drawing.Point(409, 171)
         Me.lblIntakeComp.Name = "lblIntakeComp"
         Me.lblIntakeComp.Size = New System.Drawing.Size(93, 13)
         Me.lblIntakeComp.TabIndex = 16
@@ -141,7 +145,7 @@ Partial Class frmMain
         'lblCaseNo
         '
         Me.lblCaseNo.AutoSize = True
-        Me.lblCaseNo.Location = New System.Drawing.Point(25, 131)
+        Me.lblCaseNo.Location = New System.Drawing.Point(25, 171)
         Me.lblCaseNo.Name = "lblCaseNo"
         Me.lblCaseNo.Size = New System.Drawing.Size(64, 13)
         Me.lblCaseNo.TabIndex = 17
@@ -150,7 +154,7 @@ Partial Class frmMain
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(481, 74)
+        Me.Label15.Location = New System.Drawing.Point(481, 106)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(47, 13)
         Me.Label15.TabIndex = 19
@@ -159,7 +163,7 @@ Partial Class frmMain
         'txbIncidentNo
         '
         Me.txbIncidentNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txbIncidentNo.Location = New System.Drawing.Point(28, 147)
+        Me.txbIncidentNo.Location = New System.Drawing.Point(28, 187)
         Me.txbIncidentNo.Name = "txbIncidentNo"
         Me.txbIncidentNo.Size = New System.Drawing.Size(140, 26)
         Me.txbIncidentNo.TabIndex = 3
@@ -167,7 +171,7 @@ Partial Class frmMain
         'txbOffense
         '
         Me.txbOffense.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txbOffense.Location = New System.Drawing.Point(484, 90)
+        Me.txbOffense.Location = New System.Drawing.Point(484, 122)
         Me.txbOffense.Name = "txbOffense"
         Me.txbOffense.Size = New System.Drawing.Size(266, 26)
         Me.txbOffense.TabIndex = 2
@@ -175,7 +179,7 @@ Partial Class frmMain
         'txbNotes
         '
         Me.txbNotes.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txbNotes.Location = New System.Drawing.Point(28, 266)
+        Me.txbNotes.Location = New System.Drawing.Point(28, 321)
         Me.txbNotes.MaxLength = 100
         Me.txbNotes.Multiline = True
         Me.txbNotes.Name = "txbNotes"
@@ -186,7 +190,7 @@ Partial Class frmMain
         '
         Me.cmbRefAgency.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbRefAgency.FormattingEnabled = True
-        Me.cmbRefAgency.Location = New System.Drawing.Point(321, 90)
+        Me.cmbRefAgency.Location = New System.Drawing.Point(321, 122)
         Me.cmbRefAgency.Name = "cmbRefAgency"
         Me.cmbRefAgency.Size = New System.Drawing.Size(139, 28)
         Me.cmbRefAgency.TabIndex = 1
@@ -195,7 +199,7 @@ Partial Class frmMain
         '
         Me.cmbStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbStatus.FormattingEnabled = True
-        Me.cmbStatus.Location = New System.Drawing.Point(193, 147)
+        Me.cmbStatus.Location = New System.Drawing.Point(193, 187)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Size = New System.Drawing.Size(181, 28)
         Me.cmbStatus.TabIndex = 4
@@ -203,7 +207,7 @@ Partial Class frmMain
         'dteDateSub
         '
         Me.dteDateSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dteDateSub.Location = New System.Drawing.Point(27, 207)
+        Me.dteDateSub.Location = New System.Drawing.Point(27, 255)
         Me.dteDateSub.Mask = "00/00/0000"
         Me.dteDateSub.Name = "dteDateSub"
         Me.dteDateSub.Size = New System.Drawing.Size(93, 26)
@@ -216,7 +220,7 @@ Partial Class frmMain
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(622, 347)
+        Me.btnClose.Location = New System.Drawing.Point(729, 425)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(114, 46)
         Me.btnClose.TabIndex = 12
@@ -245,7 +249,7 @@ Partial Class frmMain
         '
         Me.cmbIntakeComp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbIntakeComp.FormattingEnabled = True
-        Me.cmbIntakeComp.Location = New System.Drawing.Point(412, 147)
+        Me.cmbIntakeComp.Location = New System.Drawing.Point(412, 187)
         Me.cmbIntakeComp.Name = "cmbIntakeComp"
         Me.cmbIntakeComp.Size = New System.Drawing.Size(174, 28)
         Me.cmbIntakeComp.TabIndex = 5
@@ -253,7 +257,7 @@ Partial Class frmMain
         'dteLastStatus
         '
         Me.dteLastStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dteLastStatus.Location = New System.Drawing.Point(200, 207)
+        Me.dteLastStatus.Location = New System.Drawing.Point(200, 255)
         Me.dteLastStatus.Mask = "00/00/0000"
         Me.dteLastStatus.Name = "dteLastStatus"
         Me.dteLastStatus.Size = New System.Drawing.Size(93, 26)
@@ -263,17 +267,31 @@ Partial Class frmMain
         'lblDateStatus
         '
         Me.lblDateStatus.AutoSize = True
-        Me.lblDateStatus.Location = New System.Drawing.Point(193, 191)
+        Me.lblDateStatus.Location = New System.Drawing.Point(193, 239)
         Me.lblDateStatus.Name = "lblDateStatus"
         Me.lblDateStatus.Size = New System.Drawing.Size(90, 13)
         Me.lblDateStatus.TabIndex = 25
         Me.lblDateStatus.Text = "Last Case Status:"
         '
+        'btnOExcel
+        '
+        Me.btnOExcel.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnOExcel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnOExcel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnOExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnOExcel.Location = New System.Drawing.Point(412, 352)
+        Me.btnOExcel.Name = "btnOExcel"
+        Me.btnOExcel.Size = New System.Drawing.Size(114, 25)
+        Me.btnOExcel.TabIndex = 26
+        Me.btnOExcel.Text = "Open Excel"
+        Me.btnOExcel.UseVisualStyleBackColor = False
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(774, 417)
+        Me.ClientSize = New System.Drawing.Size(866, 488)
+        Me.Controls.Add(Me.btnOExcel)
         Me.Controls.Add(Me.dteLastStatus)
         Me.Controls.Add(Me.lblDateStatus)
         Me.Controls.Add(Me.cmbIntakeComp)
@@ -298,6 +316,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.btnSubmit)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnBrowse)
+        Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmMain"
@@ -332,4 +351,5 @@ Partial Class frmMain
     Friend WithEvents cmbIntakeComp As ComboBox
     Friend WithEvents dteLastStatus As MaskedTextBox
     Friend WithEvents lblDateStatus As Label
+    Friend WithEvents btnOExcel As Button
 End Class

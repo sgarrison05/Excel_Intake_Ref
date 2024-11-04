@@ -8,23 +8,6 @@ Imports Microsoft.Office.Interop
 
 Public Class frmMain
 
-    Public Sub ClearLables()
-
-        'Cleans form
-        Me.txbChildName.Text = ""
-        Me.cmbRefAgency.ResetText()
-        Me.txbOffense.Text = ""
-        Me.txbIncidentNo.Text = ""
-        Me.cmbStatus.ResetText()
-        Me.cmbIntakeComp.ResetText()
-        Me.dteDateSub.Text = ""
-        Me.dteLastStatus.Text = ""
-        Me.txbNotes.Text = ""
-
-        Me.txbChildName.Focus()
-
-    End Sub
-
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         'Add LE Agencies
@@ -53,6 +36,25 @@ Public Class frmMain
         Me.cmbIntakeComp.Items.Add("Needs Resetting")
         Me.cmbIntakeComp.Items.Add("Unable to Locate")
 
+        Me.txbFileName.Text = "D:\Dev\MyScripts_uc\vb\Excel_Projects\Excel_Intk_Ref_2023\Test_Intk_Book.xlsx"
+
+    End Sub
+
+    Public Sub ClearLables()
+
+        'Cleans form
+        Me.txbChildName.Text = ""
+        Me.cmbRefAgency.ResetText()
+        Me.txbOffense.Text = ""
+        Me.txbIncidentNo.Text = ""
+        Me.cmbStatus.ResetText()
+        Me.cmbIntakeComp.ResetText()
+        Me.dteDateSub.Text = ""
+        Me.dteLastStatus.Text = ""
+        Me.txbNotes.Text = ""
+
+        Me.txbChildName.Focus()
+
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
@@ -61,7 +63,6 @@ Public Class frmMain
         Me.Close()
 
     End Sub
-
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
 
@@ -133,4 +134,13 @@ Public Class frmMain
 
     End Sub
 
+    Private Sub btnOExcel_Click(sender As Object, e As EventArgs) Handles btnOExcel.Click
+        Dim proc As New System.Diagnostics.Process
+
+        proc.StartInfo.FileName = "excel.exe"
+        proc.StartInfo.Arguments = "D:\Dev\MyScripts_uc\vb\Excel_Projects\Excel_Intk_Ref_2023\Test_Intk_Book.xlsx"
+
+        proc.Start()
+
+    End Sub
 End Class
