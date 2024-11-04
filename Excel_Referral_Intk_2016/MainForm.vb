@@ -30,6 +30,8 @@ Public Class frmMain
         Me.cmbIntakeComp.Items.Add("Needs Resetting")
         Me.cmbIntakeComp.Items.Add("Unable to Locate")
 
+        Me.txbFileName.Text = "D:\Dev\MyScripts_uc\vb\Excel_Projects\Excel_Intk_Ref_2023\Test_Intk_Book.xlsx"
+
     End Sub
 
     Public Sub ClearLables()
@@ -127,4 +129,13 @@ Public Class frmMain
 
     End Sub
 
+    Private Sub btnOExcel_Click(sender As Object, e As EventArgs) Handles btnOExcel.Click
+        Dim proc As New System.Diagnostics.Process
+
+        proc.StartInfo.FileName = "excel.exe"
+        proc.StartInfo.Arguments = "D:\Dev\MyScripts_uc\vb\Excel_Projects\Excel_Intk_Ref_2023\Test_Intk_Book.xlsx"
+
+        proc.Start()
+
+    End Sub
 End Class
